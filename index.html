@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>ContactHub</title>
+</head>
+<body>
+
+    <nav class="navbar bg-white border-bottom border-light-subtle fixed-top " id="navBar">
+  <div class="container-fluid container-lg">
+    <a class="navbar-brand d-flex align-items-center gap-2">
+      <div class="icon-wraapper bg-nav-item-color text-white rounded-4">
+        <i class="fa fa-address-book fs-4 my-3 mx-3"></i>
+      </div>
+      <div class="content-wrapper">
+        <h1 class="fw-bold fs-3 m-0 fw-semibold">Contact<span class="text-main-color">Hub</span></h1>
+        <p class="text-gray-bold-color font-size-12 fw-semibold d-none d-md-block">Smart Contact Manager</p>
+      </div>
+    </a>
+      <div class="d-flex align-items-center gap-3">
+      <button class="add-btn border-0 text-white bg-nav-item-color rounded-3 py-2 px-3 font-size-14 transition-5" data-bs-toggle="modal" data-bs-target="#addContact" type="submit">
+        <i class="fa fa-plus me-2"></i>Add<span class="d-none d-md-inline">Contact</span> 
+      </button>
+      <div class="icon-wrapper rounded-3 d-none d-md-inline"><i class="fa fa-bell text-light-bold-color nav-icon"></i></div>
+      <div class="icon-wrapper rounded-3 d-none d-md-inline"><i class="fa fa-gear text-light-bold-color nav-icon"></i></div>
+      <img src="imgs/avatar-1.jpg" class="profile-img rounded-3" alt="profile image">
+      </div>
+  </div>
+    </nav> 
+
+    <header class="container-fluid container-lg" id="main-header" >
+      <div class="row g-2 mt-3" id="mainHeaderContant">
+
+        
+      </div>
+    </header>
+
+  <div class="container-fluid container-lg all gap-5">
+    <section id="allContactsSection" class="my-5">
+      <header>
+          <h2 class="text-black fw-bold fs-1 m-0">All Contacts</h2>
+          <p class="text-gray-light-color fs-6">Manage and organize your contacts</p>
+          <input id="searchInput" oninput="searchContacts()" type="text" class="border rounded-3 w-100 p-2 my-3 fa-placeholder" placeholder="&#xf002 S e a r c h   by n a m e , p h o n e , o r  e m a i l  ....">
+        </header>
+        <div id="allContacts" class="content-wrapper row g-3">
+          
+        </div>
+    </section>
+
+    <section id="favAndEmergency">
+        <div id="Favorites" class="bg-white shadow rounded-3">
+      </div>
+
+       <div id="Emergency" class="bg-white shadow rounded-3 mt-4">
+      </div>  
+    </section>
+  </div>
+
+<div class="modal fade" id="addContact" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <div class="d-flex justify-content-between align-items-center p-2">
+            <h2 class="fw-bold fs-4 m-0">Add New Contact</h2>
+          </div>      
+        </div>
+      <div class="modal-body">
+        <div class="p-4">
+            <div class="text-center mb-4">
+              <div class="avatar-circle d-flex justify-content-center align-items-center mx-auto mb-3">
+                <i class="fa fa-user text-white fs-2"></i>
+              </div>
+              <button class="btn change-photo-btn px-4 py-2 rounded-3 fw-semibold text-gray-light-color" >
+                <i class="fa fa-camera me-2 "></i> Change Photo
+              </button>
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-semibold" for="fullName">
+                Full Name <span class="text-danger">*</span>
+              </label>
+              <input type="text" id="fullName" class="form-control custom-input" placeholder="Enter full name">
+              <div class="invalid-feedback">
+  Name must start with a Capital letter and be 3-7 characters long.
+</div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-semibold" for="phoneNum">
+                Phone Number <span class="text-danger">*</span>
+              </label>
+              <input type="text" id="phoneNum" class="form-control custom-input" placeholder="e.g., 01012345678">
+              <div class="invalid-feedback">
+                Please enter a valid Egyptian phone number
+                  </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-semibold" for="email">Email Address</label>
+              <input type="email" id="email" class="form-control custom-input" placeholder="name@example.com">
+              <div class="invalid-feedback">
+       Please enter a valid Email
+      
+                  </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-semibold" for="address">Address</label>
+              <input type="text" id="address" class="form-control custom-input" placeholder="Enter address">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-semibold" for="group">Group</label>
+              <select class="form-select custom-input" id="group" name="group">
+                <option selected hidden disabled>Select a group</option>
+                <option value="Family">Family</option>
+                <option value="Friends">Friends</option>
+                <option value="Work">Work</option>
+                <option value="School">School</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="mb-4">
+              <label class="form-label fw-semibold" for="notes">Notes</label>
+              <textarea class="form-control custom-input" id="notes" rows="3"
+                placeholder="Add notes about this contact"></textarea>
+            </div>
+
+            <div class="d-flex gap-4 mb-4">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="favorite">
+                <label class="form-check-label fw-semibold" for="favorite">
+                  <i class="fa fa-star text-warning me-2"></i>Favorite
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="emergency">
+                <label class="form-check-label fw-semibold" for="emergency">
+                  <i class="fa fa-heart-pulse text-danger me-2"></i>Emergency
+                </label>
+              </div>
+            </div>
+
+          </div>
+      </div>
+      <div class="modal-footer">
+        <div class="p-2 d-flex gap-3 w-100">
+            <button class="btn cancel-btn w-50 py-2 rounded-3 fw-semibold w-50" data-bs-dismiss="modal">
+              Cancel
+            </button>
+
+            <button id="addContactBtn" class="btn save-btn w-50 py-2 rounded-3 fw-semibold text-white w-50">
+              <i class="fa fa-check me-2"></i>Save Contact
+            </button>
+          </div>      
+        </div>
+    </div>
+  </div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

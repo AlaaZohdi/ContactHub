@@ -1,0 +1,161 @@
+@import url(common.css);
+/* ?================= navBar ================ */
+#navBar{
+.profile-img{
+    width: 40px;
+    height: 40px;
+}
+.icon-wrapper{
+    padding: 10px;
+    &:hover{
+    background-color: #F3F4F6;
+    .nav-icon{
+    color: #364153;
+}}}   
+.add-btn:hover{
+    box-shadow: 0 6px 5px -5px var(--main-color) ; 
+    transform: translateY(-5px);
+}
+}
+/* ?================= header ================ */
+#main-header{
+    margin-top: 100px;
+    .header-item{
+        border:solid 1px #E0E2E4;
+    }
+}
+/* ?================= allContactsSection ================ */
+#allContactsSection{ 
+    .bg-purple{
+        background-color:#EDE9FE;
+    }
+    input:focus{
+        outline: none;
+        box-shadow: 1px 1px 5px var(--main-color);
+
+    }
+    .text-purple{
+        color: #7F22FE;
+    }
+    footer{
+        background-color: #FAFBFC;
+        .bg-green:hover{
+            background-color: #bcdecd;
+        }
+        .bg-purple:hover{
+        background-color:#ccc5ec;
+    }
+    .text-gray-light-color:nth-child(1):hover{
+        color: #FFB900;
+    }
+    .text-gray-light-color:nth-child(1):hover{
+        color: red;
+    }
+    .text-gray-light-color:nth-child(3):hover{
+        color: #4F39F6;
+        background-color: #EEF2FF;
+    }
+    .text-gray-light-color:nth-child(4):hover{
+        color: red;
+        background-color:#FFF1F2;
+    }
+    }
+}
+/* ?================= favAndEmergency ================ */
+#favAndEmergency{
+    #Favorites header{
+        background-color: #FFFAEB;
+    }
+    #Emergency header{
+        background-color:#FFF2F2;
+    }
+    .Favorite-item{
+        .icon-wrapper{
+                color:#009966 ;
+                background-color: #c1eed8;
+            }
+        &:hover{
+            background-color: #FFFBEB;
+            .icon-wrapper{
+                color: white;
+                background-color: #009966;
+            }
+            
+        }
+    }
+    .Emergency-item{
+        .icon-wrapper{
+                color: red;
+                background-color: rgb(236, 187, 187);
+            }
+        &:hover{
+            background-color: #FFF1F2;
+            .icon-wrapper{
+                color: white;
+                background-color: red;
+            }
+            
+        }
+    }
+}
+/* ?================= add contact ================ */
+#addContact{
+.add-contact-card {
+  border: 1px solid #eee;
+}
+.form-label{
+    color: var(--gray-light-color);
+}
+.avatar-circle {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: linear-gradient(to right, #3b82f6, #2563eb);
+}
+.change-photo-btn {
+  background-color: #f3f4f6;
+  border: none;
+  transition: 0.3s;
+}
+.change-photo-btn:hover {
+  background-color: #e5e7eb;
+}
+.custom-input {
+  border-radius: 14px;
+  padding: 12px 14px;
+  border: 1px solid #d1d5db;
+}
+.custom-input:focus {
+  outline: none;
+  border-color: #7f22fe;
+  box-shadow: 0px 0px 6px rgba(127, 34, 254, 0.4);
+}
+.cancel-btn {
+  background-color: #f3f4f6;
+  border: none;
+  color: #111827;
+}
+.cancel-btn:hover {
+  background-color: #e5e7eb;
+}
+.save-btn {
+  background: linear-gradient(to right, #7f22fe, #5b36f8);
+  border: none;
+  transition: 0.3s;
+}
+.save-btn:hover {
+  opacity: 0.9;
+}
+}
+/* ?================= media ================ */
+@media screen and (min-width:768px) {
+    .all{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #allContactsSection{width:70%;}
+    #favAndEmergency{width: 30%;}
+}
+
+
